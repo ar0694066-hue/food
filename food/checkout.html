@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Foodie</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Foodie</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout">
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+            <label>Name: <input type="text" required></label><br>
+            <label>Address: <input type="text" required></label><br>
+            <label>Payment:
+        <select required>
+          <option>Cash</option>
+          <option>Card</option>
+        </select>
+      </label><br>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Foodie. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('checkout-form').onsubmit = function(e) {
+            e.preventDefault();
+            localStorage.removeItem('cart');
+            window.location.href = 'order-confirmation.html';
+        }
+    </script>
+</body>
+
+</html>
